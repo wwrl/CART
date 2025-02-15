@@ -1,86 +1,86 @@
 # CART
-##Analiza i Modelowanie Danych Transakcyjnych
+## Analysis and Modeling of Transactional Data
+#### Project Description
+This project focuses on analyzing, cleaning, and modeling transactional data. It includes the implementation of classification and regression models to predict transaction status and amounts.
 
-Opis projektu
+Technologies Used
 
-Ten projekt koncentruje się na analizie, czyszczeniu i modelowaniu danych transakcyjnych. Zawiera implementację modeli klasyfikacyjnych oraz regresyjnych do przewidywania statusu transakcji i ich kwot.
+The project was developed in R, using the following packages:
 
-Wykorzystane technologie
+dplyr – data processing and transformation
 
-Projekt został zrealizowany w języku R, przy użyciu następujących pakietów:
+ggplot2 – visualization
 
-dplyr – przetwarzanie i transformacja danych
+rpart, randomForest – classification and regression models
 
-ggplot2 – wizualizacja
+caret, MLmetrics, pROC – model evaluation
 
-rpart, randomForest – modele klasyfikacyjne i regresyjne
+lubridate – date manipulation
 
-caret, MLmetrics, pROC – ocena modeli
+Analysis Steps
 
-lubridate – manipulacja datami
+1️⃣ Data Loading and Exploration
 
-Kroki analizy
+Data is loaded from a .RData file, followed by basic exploration, including variable visualization:
 
-1️⃣ Wczytanie i eksploracja danych
+Transaction time distribution
 
-Dane są ładowane z pliku .RData, następnie przeprowadzana jest ich podstawowa eksploracja, w tym wizualizacja zmiennych:
+Histogram of transaction amounts
 
-Rozkład czasowy transakcji
+Bar charts for categorical variables (issuer, recurringaction, status)
 
-Histogram kwot transakcji
+2️⃣ Data Cleaning and Processing
 
-Wykresy słupkowe dla zmiennych kategorycznych (issuer, recurringaction, status)
+Conversion of selected variables to factor format.
 
-2️⃣ Czyszczenie i przetwarzanie danych
+Creation of the day_of_week variable (day of the week of the transaction).
 
-Konwersja wybranych zmiennych na format factor.
+Removal of unnecessary columns (id, description, screenheight, etc.).
 
-Tworzenie zmiennej day_of_week (dzień tygodnia transakcji).
+Filtering data and eliminating selected NA values.
 
-Usunięcie niepotrzebnych kolumn (id, description, screenheight, itp.).
+3️⃣ Building Classification Models
 
-Filtrowanie danych, eliminacja wybranych wartości NA.
+Two classification models were created:
 
-3️⃣ Budowa modeli klasyfikacyjnych
+Decision tree (rpart) for predicting transaction status (success vs failure).
 
-Stworzone zostały dwa modele klasyfikacyjne:
+Pruned decision tree (prune) – model optimization based on the cp criterion.
 
-Drzewo decyzyjne (rpart) do przewidywania statusu transakcji (sukces vs porażka).
+Model evaluation: Calculation of confusion matrix, accuracy, and F1-score.
 
-Drzewo decyzyjne z przycinaniem (prune) – optymalizacja modelu na podstawie kryterium cp.
+4️⃣ Regression Model
 
-Ocena modelu: Obliczenie macierzy błędów (confusion matrix), dokładności (accuracy) oraz F1-score.
+Regression model (rpart) for predicting transaction amount.
 
-4️⃣ Model regresyjny
+Model pruning (prune) and parameter optimization.
 
-Model regresyjny (rpart) do przewidywania wartości amount.
+Calculation of model errors (MSE, SSE).
 
-Przycinanie modelu (prune), optymalizacja parametrów.
+5️⃣ Random Forest for Amount Prediction
 
-Obliczenie błędów modelu (MSE, SSE).
+Training the randomForest model to predict transaction amounts.
 
-5️⃣ Random Forest dla predykcji kwoty
+Variable importance assessment (varImpPlot).
 
-Trening modelu randomForest do przewidywania wartości transakcji.
+Final prediction and result comparison.
 
-Ocena ważności zmiennych (varImpPlot).
+Summary
 
-Finalna predykcja i porównanie wyników.
+The project performs a complete transaction analysis process – from initial exploration, through data cleaning, to building classification and regression models. Both classic decision trees and Random Forest were used to predict transaction amounts. The classification model allows analyzing which transactions may be declined by the bank, while the regression model helps estimate transaction values.
 
-Podsumowanie
+How to Run?
 
-Projekt przeprowadza pełen proces analizy transakcji – od wstępnej eksploracji, przez czyszczenie danych, po budowę modeli klasyfikacyjnych i regresyjnych. Wykorzystano zarówno klasyczne drzewa decyzyjne, jak i Random Forest do przewidywania kwot. Model klasyfikacyjny pozwala na analizę, które transakcje mogą zostać odrzucone przez bank, a model regresyjny pomaga estymować wartości transakcji.
+Ensure all required packages are installed (install.packages(...)).
 
-Jak uruchomić?
+Load the .RData file with the data.
 
-Upewnij się, że masz zainstalowane wszystkie wymagane pakiety (install.packages(...)).
+Run the code in RStudio.
 
-Wczytaj plik .RData z danymi.
+Analyze the results and visualizations!
 
-Uruchom kod w RStudio.
+Author
 
-Analizuj wyniki i wizualizacje!
+This project was developed as part of transactional data analysis. If you have any questions, feel free to reach out!
 
-Autor
 
-Projekt opracowany w ramach analizy danych transakcyjnych. Jeśli masz pytania, zapraszam do kontaktu!
