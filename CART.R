@@ -15,7 +15,7 @@ library(randomForest)
 library(xgboost)
 
 ## Data
-load("D:/dane_zaliczenie (1).RData")
+load("")
 
 # Visualization for a variable "createtime"
 proba_uczaca <- proba_uczaca %>%
